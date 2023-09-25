@@ -36,23 +36,13 @@ if selected_image:
             #files = {"files": (uploaded_image.name, uploaded_image)}
             response = requests.post(url+endpoint, files=files)
 
-        st.info("uploaded. Status Code: "+ str(response.status_code))
-        
+        #st.info("uploaded. Status Code: "+ str(response.status_code))
 
         if response.status_code == 200:
-            st.success("Selected image processed successfully.")
+            st.success("Selected image processed successfully. Bounding boxes with classification confidence will only be drawn over abnormal classes.")
             
-            #st.info(str(response.content))
-            #st.info(str(BytesIO(response.content)))
-
-            #image = response.content.json()["image"]
-            #label = response.content.json()["label"]
-            #st.info(str(label))
-            #st.info(str(image))
-            #processed_image = Image.open(BytesIO(image))
-
             processed_image = Image.open(BytesIO(response.content))
             
             st.image(processed_image, caption="Processed Image", use_column_width=True)
         else:
-            st.error("An error occurred while uploading the file.")
+            st.error("An error occurred while uploading the file. Status Code: "+str(response.status_code))
