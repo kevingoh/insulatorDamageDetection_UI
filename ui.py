@@ -47,7 +47,7 @@ if selected_image:
             label = response.json()["label"]
             st.info(str(label))
             st.info(str(image))
-            processed_image = Image.open(BytesIO(image))
+            processed_image = Image.open(BytesIO(image.content))
             st.image(processed_image, caption="Processed Image", use_column_width=True)
         else:
             st.error("An error occurred while uploading the file.")
