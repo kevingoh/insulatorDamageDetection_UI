@@ -28,8 +28,8 @@ if selected_image:
     #uploaded_image = st.file_uploader("Upload the selected image", type=['png', 'jpg', 'jpeg'])
     
     # Upload selected image to FastAPI server
-    if st.button("Upload and Process"):
-        st.info("uploading and processing...")
+    if st.button("Detect"):
+        st.info("uploading and processing ...")
         image_path = os.path.join(image_directory, selected_image)
         with open(image_path, "rb") as f:
             files = {"file": (selected_image, f)}
