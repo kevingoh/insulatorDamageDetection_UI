@@ -46,6 +46,7 @@ if selected_image:
             image = response.json()["image"]
             label = response.json()["label"]
             st.info(str(label))
+            st.info(str(image))
             processed_image = Image.open(BytesIO(image))
             st.image(processed_image, caption="Processed Image", use_column_width=True)
         else:
