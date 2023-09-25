@@ -44,6 +44,7 @@ if selected_image:
             st.success("Selected image processed successfully.")
             #processed_image = Image.open(BytesIO(response.content))
             st.info(str(response.content))
+            st.info(str(BytesIO(response.content)))
             image = response.content.json()["image"]
             label = response.content.json()["label"]
             st.info(str(label))
