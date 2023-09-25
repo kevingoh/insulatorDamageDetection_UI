@@ -37,6 +37,7 @@ if selected_image:
             #files = {"files": (uploaded_image.name, uploaded_image)}
             response = requests.post(url+endpoint, files=files)
 
+        st.info("uploaded. req status:", response.status_code)
 
         if response.status_code == 200:
             st.success("Selected image processed successfully.")
