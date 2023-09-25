@@ -29,15 +29,14 @@ if selected_image:
     
     # Upload selected image to FastAPI server
     if st.button("Upload and Process"):
-
-
+        st.info("uploading and processing...")
         image_path = os.path.join(image_directory, selected_image)
         with open(image_path, "rb") as f:
             files = {"file": (selected_image, f)}
             #files = {"files": (uploaded_image.name, uploaded_image)}
             response = requests.post(url+endpoint, files=files)
 
-        st.info("uploaded. req status: "+ str(response.status_code))
+        st.info("uploaded. Status Code: "+ str(response.status_code))
         
 
         if response.status_code == 200:
