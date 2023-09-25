@@ -43,11 +43,12 @@ if selected_image:
         if response.status_code == 200:
             st.success("Selected image processed successfully.")
             #processed_image = Image.open(BytesIO(response.content))
-            image = response.json()["image"]
-            label = response.json()["label"]
+            st.info(str(response.content))
+            image = response.content.json()["image"]
+            label = response.content.json()["label"]
             st.info(str(label))
             st.info(str(image))
-            processed_image = Image.open(BytesIO(image.content))
+            processed_image = Image.open(BytesIO(image))
             st.image(processed_image, caption="Processed Image", use_column_width=True)
         else:
             st.error("An error occurred while uploading the file.")
