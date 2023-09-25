@@ -6,7 +6,7 @@ import zipfile
 import glob
 import os
 
-st.title('AI Insulator Damage Detection')
+st.title('Insulator Damage Detection with AI Computer Vision')
 
 # fastapi endpoint
 url = 'http://104.196.230.119:8000'
