@@ -43,8 +43,8 @@ if selected_image:
         if response.status_code == 200:
             st.success("Selected image processed successfully.")
             
-            st.info(str(response.content))
-            st.info(str(BytesIO(response.content)))
+            #st.info(str(response.content))
+            #st.info(str(BytesIO(response.content)))
 
             #image = response.content.json()["image"]
             #label = response.content.json()["label"]
