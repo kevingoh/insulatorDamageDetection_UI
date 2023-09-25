@@ -37,11 +37,16 @@ if selected_image:
             #files = {"files": (uploaded_image.name, uploaded_image)}
             response = requests.post(url+endpoint, files=files)
 
-        #st.info("uploaded. req status: "+ str(response.status_code))
+        st.info("uploaded. req status: "+ str(response.status_code))
+        st.info(str(response.json))
 
         if response.status_code == 200:
             st.success("Selected image processed successfully.")
-            processed_image = Image.open(BytesIO(response.content))
+            #processed_image = Image.open(BytesIO(response.content))
+            image = response.json()["image"]
+            bbox = response.json()["bbox"]
+            label = response.json()["label"]
+            processed_image = Image.open(BytesIO(image))
             st.image(processed_image, caption="Processed Image", use_column_width=True)
         else:
             st.error("An error occurred while uploading the file.")
