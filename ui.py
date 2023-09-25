@@ -9,7 +9,7 @@ import os
 st.title('AI Insulator Damage Detection')
 
 # fastapi endpoint
-url = 'http://34.83.208.136:8000'
+url = 'http://104.196.230.119:8000'
 endpoint = '/detection'
 
 st.write('''This application uses Deeplearning Computer Vision to detect 2 types of damages: Broken Disc or Flashover, on Insulators.''') # description and instructions
