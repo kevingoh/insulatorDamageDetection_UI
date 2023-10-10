@@ -9,7 +9,8 @@ import os
 st.title('Insulator Damage Detection with AI Computer Vision')
 
 # fastapi endpoint
-url = 'http://104.196.230.119:8000'
+#url = 'http://104.196.230.119:8000' #deeplearning-vm-2
+url = https://gratefully-worthy-possum.ngrok-free.app #ngrok static domain
 endpoint = '/detection'
 
 st.write('''This application uses Deeplearning Computer Vision to detect 2 types of damages: Broken Disc or Flashover, on Insulators.''') # description and instructions
