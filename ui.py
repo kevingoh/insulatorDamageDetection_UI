@@ -8,14 +8,14 @@ import os
 import numpy as np
 
 st.title('Insulator Damage Detection with AI Computer Vision')
-
+st.caption('a joint project by Trinitium sdn bhd and Cognigen Enterprise')
 # fastapi endpoint
 #url = 'http://104.196.230.119:8000' #deeplearning-vm-2
 url = "https://gratefully-worthy-possum.ngrok-free.app" #ngrok static domain
 endpoint = '/detection'
 
 st.write('''This is a demonstration of using Computer Vision with AI model to detect 2 types of damages on electrical insulators: Broken Disc or Flashover, on Insulators.''') # description and instructions
-st.write('''Disclaimer: training dataset was crowd-sourced from public domain. Test images for demonstration were not used to train the model.''')
+st.caption('''Disclaimer: training dataset was crowd-sourced from public domain. Test images for demonstration were not used to train the model.''')
  # Specify the directory containing the images
 image_directory = "test_images"
 #selected_file = st.selectbox("Select an image:", os.listdir(image_directory))
